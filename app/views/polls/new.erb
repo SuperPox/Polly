@@ -1,0 +1,24 @@
+<div class="container">
+    
+  <div class="col-md-8 col-md-offset-2">
+    <center> <h2><%=@name%>'s New Polly</h2> </center>
+    <div class="content">
+      <p>
+        <form action="/polls" method="post">
+            
+            <label><h3> New Polly Name: </h3></label> 
+            <input type="text" name="poll[name]">
+            
+            <label><h3> Question 1: </h3></label> 
+            <input type="text" name="question[name]">
+
+            <label><h3> Possible Answer 1: </h3></label> 
+            <input type="text" name="possible_answer[name]">
+        
+        <br>
+        <input type="submit">
+        </form>            
+      </p>
+    </div>
+  </div>
+</div>
