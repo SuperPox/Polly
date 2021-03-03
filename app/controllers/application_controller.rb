@@ -12,4 +12,16 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
+  get "/polls/new" do
+    @name = "User"
+    erb :'/polls/new'
+  end
+
+  get "/polls/setup" do
+    @name = "User"
+    erb :'/polls/setup'
+  end
+
+
+
 end

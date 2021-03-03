@@ -1,0 +1,13 @@
+<h1> Polls Show </h1>
+
+<h2> <%=@poll.title%> Poll </h2>
+
+<h3><%=@poll.questions[0].content%></h3>
+<ol type="A">
+    <li><%=@poll.possible_answers[0].content%></li>
+    <li><%=@poll.possible_answers[1].content%></li>
+    <li><%=@poll.possible_answers[2].content%></li>
+    <li><%=@poll.possible_answers[3].content%></li>
+</ol>
+
+

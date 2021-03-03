@@ -1,0 +1,169 @@
+<div class="container">
+  <div class="col-md-8 col-md-offset-2">
+    <center> <h2><%=@name%>'s New Polly</h2> </center>
+    <div class="content">
+      <p>
+        <form action="/polls" method="post">
+            
+            <label><h3> New Polly Name: </h3></label> 
+            <input type="text" name="id[title]">
+
+            <br>
+            <h3> Number of Questions: </h3>
+            <p id="result">Select and Click "Update"</p> 
+            
+            <h3> Select the Number of Questions you Want for this Polly </h3>
+            <select id="number">
+              <option value = "0" selected>empty</option>
+              <option value = "1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+    
+            <script>
+                function GetSelectedValue()
+                {
+                    var e = document.getElementById("number");
+                    var result = e.options[e.selectedIndex].value;                   
+                    document.getElementById("result").innerHTML = result;            
+                    if (result == "1")
+                    {
+                      document.getElementById("ONE").style.display="block";
+                      document.getElementById("TWO").style.display="none";
+                      document.getElementById("THREE").style.display="none";
+                      document.getElementById("FOUR").style.display="none";
+                      document.getElementById("FIVE").style.display="none";
+                    }
+                    if (result == "2")
+                    {
+                      document.getElementById("ONE").style.display="block";
+                      document.getElementById("TWO").style.display="block";
+                      document.getElementById("THREE").style.display="none";
+                      document.getElementById("FOUR").style.display="none";
+                      document.getElementById("FIVE").style.display="none";
+                    }
+                    if (result == "3")
+                    {
+                      document.getElementById("ONE").style.display="block";
+                      document.getElementById("TWO").style.display="block";
+                      document.getElementById("THREE").style.display="block";
+                      document.getElementById("FOUR").style.display="none";
+                      document.getElementById("FIVE").style.display="none";
+                    }
+                    if (result == "4")
+                    {
+                        document.getElementById("ONE").style.display="block";
+                        document.getElementById("TWO").style.display="block";
+                        document.getElementById("THREE").style.display="block";
+                        document.getElementById("FOUR").style.display="block";
+                        document.getElementById("FIVE").style.display="none";
+                    }
+                      if (result == "5")
+                      {
+                          document.getElementById("ONE").style.display="block";
+                          document.getElementById("TWO").style.display="block";
+                          document.getElementById("THREE").style.display="block";
+                          document.getElementById("FOUR").style.display="block";
+                          document.getElementById("FIVE").style.display="block";
+                      }
+                }   
+            </script>
+
+            <button type="button" onclick="GetSelectedValue()">Update</button>
+                                 
+            <div id="ONE" style="display:none;">
+              <label for="q1"><h3> Question 1: </h3></label> 
+              <input type="text" name="q1">
+
+              <label for="pa1"><h4> Possible Answer 1: </h4></label> 
+              <input type="text" name="pa1">
+  
+              <label for="pa2"><h4> Possible Answer 2: </h4></label> 
+              <input type="text" name="pa2">
+  
+              <label for="pa3"><h4> Possible Answer 3: </h4></label> 
+              <input type="text" name="pa3">
+  
+              <label for="pa4"><h4> Possible Answer 4: </h4></label> 
+              <input type="text" name="pa4">
+            </div> 
+            
+            <br>
+
+            <div id="TWO" style="display:none;">
+              <label for="q2"><h3> Question 2: </h3></label> 
+              <input type="text" name="q2">
+
+              <label for="pa5"><h4> Possible Answer 1: </h4></label> 
+              <input type="text" name="pa5">
+
+              <label for="pa6"><h4> Possible Answer 2: </h4></label> 
+              <input type="text" name="pa6">
+
+              <label for="pa7"><h4> Possible Answer 3: </h4></label> 
+              <input type="text" name="pa7">
+
+              <label for="pa8"><h4> Possible Answer 4: </h4></label> 
+              <input type="text" name="pa8">
+            </div> 
+
+            <div id="THREE" style="display:none;">
+              <label for="q3"><h3> Question 3: </h3></label> 
+              <input type="text" name="q3">
+
+              <label for="pa9"><h4> Possible Answer 1: </h4></label> 
+              <input type="text" name="pa9">
+
+              <label for="pa10"><h4> Possible Answer 2: </h4></label> 
+              <input type="text" name="pa10">
+
+              <label for="pa11"><h4> Possible Answer 3: </h4></label> 
+              <input type="text" name="pa11">
+
+              <label for="pa12"><h4> Possible Answer 4: </h4></label> 
+              <input type="text" name="pa12">
+            </div> 
+
+            <div id="FOUR" style="display:none;">
+              <label for="q4"><h3> Question 4: </h3></label> 
+              <input type="text" name="q4">
+
+              <label for="pa13"><h4> Possible Answer 1: </h4></label> 
+              <input type="text" name="pa13">
+
+              <label for="pa14"><h4> Possible Answer 2: </h4></label> 
+              <input type="text" name="pa14">
+
+              <label for="pa15"><h4> Possible Answer 3: </h4></label> 
+              <input type="text" name="pa15">
+
+              <label for="pa16"><h4> Possible Answer 4: </h4></label> 
+              <input type="text" name="pa16">
+            </div> 
+
+            <div id="FIVE" style="display:none;">
+              <label for="q5"><h3> Question 5: </h3></label> 
+              <input type="text" name="q5">
+
+              <label for="pa17"><h4> Possible Answer 1: </h4></label> 
+              <input type="text" name="pa17">
+
+              <label for="pa18"><h4> Possible Answer 2: </h4></label> 
+              <input type="text" name="pa18">
+
+              <label for="pa19"><h4> Possible Answer 3: </h4></label> 
+              <input type="text" name="pa19">
+
+              <label for="pa20"><h4> Possible Answer 4: </h4></label> 
+              <input type="text" name="pa20">
+            </div> 
+        
+        <br>
+        <input type="submit">
+        </form>            
+      </p>
+    </div>
+  </div>
+</div>
