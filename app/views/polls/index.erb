@@ -1,6 +1,8 @@
-<h1> All Polls </h1>
+<h1> All Pollys </h1>
 <ul>
-    <% @polls.each do |poll| %>
-        <li><%=poll.name%></li>
-    <%end%>
+    <% i = 0 %>
+    <% while i < @poll.length %>
+        <li><a href="/polls/<%=@poll[i].id%>"><%= @poll[i].title %></a></li>
+        <% i = i + 1 %>
+    <%end%> 
 </ul>

@@ -1,7 +1,7 @@
 class PollsController < ApplicationController
 
-    get '/polls' do
-        @polls = Polls.all
+    get '/polls/index' do
+        @poll = Poll.all
         erb :'polls/index'      
     end
 
@@ -162,4 +162,16 @@ class PollsController < ApplicationController
         end
         erb :'polls/show'
     end
+
+    
+    get '/polls/:id/take' do
+        @poll = Poll.find_by(id: params[:id])
+        
+        erb :'polls/take'
+    end
+
+
+
+
+
 end

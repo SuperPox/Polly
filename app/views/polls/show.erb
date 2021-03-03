@@ -1,13 +1,55 @@
-<h1> Polls Show </h1>
+<h1> Review Your Polly </h1>
 
 <h2> <%=@poll.title%> Poll </h2>
 
 <h3><%=@poll.questions[0].content%></h3>
 <ol type="A">
-    <li><%=@poll.possible_answers[0].content%></li>
-    <li><%=@poll.possible_answers[1].content%></li>
-    <li><%=@poll.possible_answers[2].content%></li>
-    <li><%=@poll.possible_answers[3].content%></li>
+    <li><%=@poll.questions[0].possible_answers[0].content%></li>
+    <li><%=@poll.questions[0].possible_answers[1].content%></li>
+    <li><%=@poll.questions[0].possible_answers[2].content%></li>
+    <li><%=@poll.questions[0].possible_answers[3].content%></li>
 </ol>
 
+<br>
+<h3><%=@poll.questions[1].content%></h3>
+<ol type="A">
+    <li><%=@poll.questions[1].possible_answers[0].content%></li>
+    <li><%=@poll.questions[1].possible_answers[1].content%></li>
+    <li><%=@poll.questions[1].possible_answers[2].content%></li>
+    <li><%=@poll.questions[1].possible_answers[3].content%></li>
+</ol>
+
+<br>
+<h3><%=@poll.questions[2].content%></h3>
+<ol type="A">
+    <li><%=@poll.questions[2].possible_answers[0].content%></li>
+    <li><%=@poll.questions[2].possible_answers[1].content%></li>
+    <li><%=@poll.questions[2].possible_answers[2].content%></li>
+    <li><%=@poll.questions[2].possible_answers[3].content%></li>
+</ol>
+
+<br>
+<h3><%=@poll.questions[3].content%></h3>
+<ol type="A">
+    <li><%=@poll.questions[3].possible_answers[0].content%></li>
+    <li><%=@poll.questions[3].possible_answers[1].content%></li>
+    <li><%=@poll.questions[3].possible_answers[2].content%></li>
+    <li><%=@poll.questions[3].possible_answers[3].content%></li>
+</ol>
+
+<br>
+<h3><%=@poll.questions[4].content%></h3>
+<ol type="A">
+    <li><%=@poll.questions[4].possible_answers[0].content%></li>
+    <li><%=@poll.questions[4].possible_answers[1].content%></li>
+    <li><%=@poll.questions[4].possible_answers[2].content%></li>
+    <li><%=@poll.questions[4].possible_answers[3].content%></li>
+</ol>
+
+<form action="/polls/index" method="get">
+<input type="Submit">
+</form> 
+
+<a href="/polls/index"><h3>See All Pollys</h3></a>
+<a href="/polls/:id/take"><h3>Take This Polly</h3></a>
 
