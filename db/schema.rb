@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_01_213509) do
+ActiveRecord::Schema.define(version: 2021_03_04_073748) do
 
   create_table "polls", force: :cascade do |t|
     t.integer "user_id"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2021_03_01_213509) do
   create_table "users", force: :cascade do |t|
     t.integer "user_id"
     t.string "username"
+    t.string "password_digest"
   end
 
 end

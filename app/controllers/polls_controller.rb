@@ -178,7 +178,7 @@ class PollsController < ApplicationController
     patch '/polls/:id' do
         @poll = Poll.find_by(id: params[:id])  
         #binding.pry
-        testHash = {"title" => "hardcode"}
+        testHash = {"title" => "hardcoded: needs fix"}
         @poll.update(testHash)
         erb :'polls/show'
     end
