@@ -51,5 +51,11 @@
 </form> 
 
 <a href="/polls/index"><h3>See All Pollys</h3></a>
-<a href="/polls/:id/take"><h3>Take This Polly</h3></a>
+<a href="javascript:history.back()">Go Back</a>
+<a href="/polls/<%=@poll.id%>/edit"><h3>Edit This Polly</h3></a>
+<a href="/polls/<%=@poll.id%>/take"><h3>Take This Polly</h3></a>
 
+<form action="/polls/<%=@poll.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete">
+</form>

@@ -1,12 +1,13 @@
 <div class="container">
   <div class="col-md-8 col-md-offset-2">
-    <center> <h2><%=@name%>'s New Polly</h2> </center>
+    <center> <h2><%=@name%>'s Edit Polly</h2> </center>
     <div class="content">
       <p>
-        <form action="/polls" method="post">
+        <form action="/polls/<%=@poll.id%>" method="post">
+        <input type="hidden" name="_method" value="patch">
             
             <label><h3> New Polly Name: </h3></label> 
-            <input type="text" name="id[title]">
+            <input type="text" name="id[title]" value="<%=@poll.title%>">
 
             <br>
             <h3> Number of Questions: </h3>
@@ -25,7 +26,7 @@
             <script>
                 function GetSelectedValue()
                 {
-                    var e = document.getElementById("number");
+                    var e = document.getElementById("number");                  
                     var result = e.options[e.selectedIndex].value;                   
                     document.getElementById("result").innerHTML = result;            
                     if (result == "1")

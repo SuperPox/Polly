@@ -5,7 +5,10 @@ class PollsController < ApplicationController
         erb :'polls/index'      
     end
 
-
+    get '/polls' do
+        @poll = Poll.all
+        erb :'polls/index'
+    end
 
     post '/polls' do       
         #=>params{"id"=>{"title"=>"Favorite Pet"}, "question"=>{"content"=>""}, "pa1"=>"", "pa2"=>"", etc.
@@ -163,10 +166,37 @@ class PollsController < ApplicationController
         erb :'polls/show'
     end
 
-    
+    ########################################
+    get '/polls/:id/edit' do
+        @poll = Poll.find_by(id: params[:id])
+        if @poll == nil
+            redirect :'/polls'
+        end
+        erb :'polls/edit'
+    end
+
+    patch '/polls/:id' do
+        @poll = Poll.find_by(id: params[:id])  
+        #binding.pry
+        testHash = {"title" => "hardcode"}
+        @poll.update(testHash)
+        erb :'polls/show'
+    end
+    ##########################################
+
+    delete '/polls/:id' do
+        poll = Poll.find_by(id: params[:id])
+        poll.delete
+        redirect('/polls')
+    end
+
+    ##########################################
+
     get '/polls/:id/take' do
         @poll = Poll.find_by(id: params[:id])
-        
+        if @poll == nil
+            redirect :'/polls'
+        end
         erb :'polls/take'
     end
 
