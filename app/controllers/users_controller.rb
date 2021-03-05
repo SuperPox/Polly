@@ -7,14 +7,19 @@ class UsersController < ApplicationController
         erb :"users/signup"
     end
 
-    post '/users' do
+    post '/signup' do
         u = User.create(params[:user])
-        session[:user_id] = u.id
-        redirect "/users/#{u.id}"
+        if u.id
+            session[:user_id] = u.id
+            redirect "/users/#{u.id}"
+        else
+            erb :"/users/signup"
+        end
     end
 
     get '/users/:id' do
         @user = User.find_by(id: params[:id])
+        @polls = @user.polls
         erb :'users/show'
     end
 
@@ -38,6 +43,12 @@ class UsersController < ApplicationController
     get '/logout' do
         session.clear
         redirect '/login'
+    end
+
+
+    get '/users' do
+        @users = User.all
+        erb :'users/index'
     end
 
 end

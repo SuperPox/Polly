@@ -15,6 +15,10 @@ class PollsController < ApplicationController
         poll = Poll.create(params[:id])
         poll.save
 
+        user = User.find_by(id: session[:user_id])
+        user.polls << poll
+        user.save
+
         questionContentV = []
         if (params[:q1] != nil)
             questionContentV << params[:q1]
@@ -169,7 +173,7 @@ class PollsController < ApplicationController
     ########################################
     get '/polls/:id/edit' do
         @poll = Poll.find_by(id: params[:id])
-        if @poll == nil
+        if @poll == nil || @poll.user_id != session[:user_id]
             redirect :'/polls'
         end
         erb :'polls/edit'
@@ -177,17 +181,23 @@ class PollsController < ApplicationController
 
     patch '/polls/:id' do
         @poll = Poll.find_by(id: params[:id])  
-        #binding.pry
-        testHash = {"title" => "hardcoded: needs fix"}
-        @poll.update(testHash)
+        if @poll.user_id == session[:user_id]
+            testHash = {"title" => "hardcoded: needs fix"}
+            @poll.update(testHash)
+        end
         erb :'polls/show'
     end
     ##########################################
 
     delete '/polls/:id' do
-        poll = Poll.find_by(id: params[:id])
-        poll.delete
-        redirect('/polls')
+        @poll = Poll.find_by(id: params[:id])
+        if @poll.user_id == session[:user_id]
+            @poll.delete
+            redirect('/polls')
+        else
+            erb :'items/show'
+        end
+        
     end
 
     ##########################################
