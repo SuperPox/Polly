@@ -10,7 +10,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 
-    <title>Poll.Y</title>
+    <title>Poll.y</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -27,10 +27,14 @@
 
     <div class="topnav">
       <a class="active" href="/">Home</a>
-      <a href="/logout">Log Out</a>
-      <a href="/login">Log In</a>
-      <a href="/polls/new">Make a Polly</a>
-      <a href="/polls/take">Take a Polly</a>
+      <% if current_user%>
+        <a href="/polls/new">Make a Polly</a>
+        <a href="/polls/take">Take a Polly</a>
+        <a href="/logout">Log Out</a>
+      <%else %>
+        <a href="/login"><right>Log In</right></a>
+        <a href="/signup"><right>Sign Up</right></a>
+      <%end%>
 
     </div>
 

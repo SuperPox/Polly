@@ -1,0 +1,8 @@
+<h1> My Pollys </h1>
+<ul>
+    <% i = 0 %>
+    <% while i < @poll.length %>
+        <li><a href="/polls/<%=@poll[i].id%>"><%= @poll[i].title %></a></li>
+        <% i = i + 1 %>
+    <%end%> 
+</ul>

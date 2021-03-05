@@ -1,75 +1,115 @@
-<h2> <%=@poll.title%> Polly </h2>
+<h2> <%=@poll.title%> </h2>
+
 
 <form action="/responses" method="post">
-    <h3><%=@poll.questions[0].content%></h3>
-    <input type="checkbox" id="pa1" name="pa1" value="checked">
-    <label for="pa1"><%=@poll.questions[0].possible_answers[0].content%></label><br>
+    
+    
+    <% if @poll.questions[0].content != "" %>
+        <h3><%=@poll.questions[0].content%></h3>
+    <% end %>
+    <% if @poll.questions[0].possible_answers[0].content != "" %>
+        <input type="checkbox" id="pa1" name="pa1" value="checked">
+        <label for="pa1"><%=@poll.questions[0].possible_answers[0].content%></label><br>
+    <% end %>
+    <% if @poll.questions[0].possible_answers[1].content != "" %>
+        <input type="checkbox" id="pa2" name="pa2" value="checked">
+        <label for="pa2"><%=@poll.questions[0].possible_answers[1].content%></label><br>
+    <% end %>
+    <% if @poll.questions[0].possible_answers[2].content != "" %>
+        <input type="checkbox" id="pa3" name="pa3" value="checked">
+        <label for="pa3"><%=@poll.questions[0].possible_answers[2].content%></label><br>
+    <% end %>
+    <% if @poll.questions[0].possible_answers[3].content != "" %>
+        <input type="checkbox" id="pa4" name="pa4" value="checked">
+        <label for="pa4"><%=@poll.questions[0].possible_answers[3].content%></label><br>
+    <% end %>
 
-    <input type="checkbox" id="pa2" name="pa" value="checked">
-    <label for="pa2"><%=@poll.questions[0].possible_answers[1].content%></label><br>
+    <% if @poll.questions[1].content != "" %>
+        <br>
+        <h3><%=@poll.questions[1].content%></h3>
+    <% end %>
+    <% if @poll.questions[1].possible_answers[0].content != "" %>
+        <input type="checkbox" id="pa5" name="pa5" value="checked">
+        <label for="pa5"><%=@poll.questions[1].possible_answers[0].content%></label><br>
+    <% end %>
+    <% if @poll.questions[1].possible_answers[1].content != "" %>
+        <input type="checkbox" id="pa6" name="pa6" value="checked">
+        <label for="pa6"><%=@poll.questions[1].possible_answers[1].content%></label><br>
+    <% end %>
+    <% if @poll.questions[1].possible_answers[2].content != "" %>
+        <input type="checkbox" id="pa7" name="pa7" value="checked">
+        <label for="pa7"><%=@poll.questions[1].possible_answers[2].content%></label><br>
+    <% end %>
+    <% if @poll.questions[1].possible_answers[3].content != "" %>
+        <input type="checkbox" id="pa8" name="pa8" value="checked">
+        <label for="pa8"><%=@poll.questions[1].possible_answers[3].content%></label><br>
+    <% end %>
 
-    <input type="checkbox" id="pa3" name="pa3" value="checked">
-    <label for="pa3"><%=@poll.questions[0].possible_answers[2].content%></label><br>
+    <% if @poll.questions[2].content != "" %>
+        <br>
+        <h3><%=@poll.questions[2].content%></h3>
+    <% end %>
+    <% if @poll.questions[2].possible_answers[0].content != "" %>
+        <input type="checkbox" id="pa9" name="pa9" value="checked">
+        <label for="pa9"><%=@poll.questions[2].possible_answers[0].content%></label><br>
+    <% end %>
+    <% if @poll.questions[2].possible_answers[1].content != "" %>
+        <input type="checkbox" id="pa10" name="pa10" value="checked">
+        <label for="pa10"><%=@poll.questions[2].possible_answers[1].content%></label><br>
+    <% end %>
+    <% if @poll.questions[2].possible_answers[2].content != "" %>
+        <input type="checkbox" id="pa11" name="pa11" value="checked">
+        <label for="pa11"><%=@poll.questions[2].possible_answers[2].content%></label><br>
+    <% end %>
+    <% if @poll.questions[2].possible_answers[3].content != "" %>
+        <input type="checkbox" id="pa12" name="pa12" value="checked">
+        <label for="pa12"><%=@poll.questions[2].possible_answers[3].content%></label><br>
+    <% end %>
+  
+    <% if @poll.questions[3].content != "" %>
+        <br>
+        <h3><%=@poll.questions[3].content%></h3>
+    <% end %>
+    <% if @poll.questions[3].possible_answers[0].content != "" %>
+        <input type="checkbox" id="pa13" name="pa13" value="checked">
+        <label for="pa13"><%=@poll.questions[3].possible_answers[0].content%></label><br>
+    <% end %>
+    <% if @poll.questions[3].possible_answers[1].content != "" %>
+        <input type="checkbox" id="pa14" name="pa14" value="checked">
+        <label for="pa14"><%=@poll.questions[3].possible_answers[1].content%></label><br>
+    <% end %>
+    <% if @poll.questions[3].possible_answers[2].content != "" %>
+        <input type="checkbox" id="pa15" name="pa15" value="checked">
+        <label for="pa15"><%=@poll.questions[3].possible_answers[2].content%></label><br>
+    <% end %>
+    <% if @poll.questions[3].possible_answers[3].content != "" %>
+        <input type="checkbox" id="pa16" name="pa16" value="checked">
+        <label for="pa16"><%=@poll.questions[3].possible_answers[3].content%></label><br>
+    <% end %>
 
-    <input type="checkbox" id="pa4" name="pa4" value="checked">
-    <label for="pa4"><%=@poll.questions[0].possible_answers[3].content%></label><br>
-
-    <br>
-    <h3><%=@poll.questions[1].content%></h3>
-    <input type="checkbox" id="pa5" name="pa5" value="checked">
-    <label for="pa5"><%=@poll.questions[1].possible_answers[0].content%></label><br>
-
-    <input type="checkbox" id="pa6" name="pa6" value="checked">
-    <label for="pa6"><%=@poll.questions[1].possible_answers[1].content%></label><br>
-
-    <input type="checkbox" id="pa7" name="pa7" value="checked">
-    <label for="pa7"><%=@poll.questions[1].possible_answers[2].content%></label><br>
-
-    <input type="checkbox" id="pa8" name="pa8" value="checked">
-    <label for="pa8"><%=@poll.questions[1].possible_answers[3].content%></label><br>
-
-    <br>
-    <h3><%=@poll.questions[2].content%></h3>
-    <input type="checkbox" id="pa9" name="pa9" value="checked">
-    <label for="pa9"><%=@poll.questions[2].possible_answers[0].content%></label><br>
-
-    <input type="checkbox" id="pa10" name="pa10" value="checked">
-    <label for="pa10"><%=@poll.questions[2].possible_answers[1].content%></label><br>
-
-    <input type="checkbox" id="pa11" name="pa11" value="checked">
-    <label for="pa11"><%=@poll.questions[2].possible_answers[2].content%></label><br>
-
-    <input type="checkbox" id="pa12" name="pa12" value="checked">
-    <label for="pa12"><%=@poll.questions[2].possible_answers[3].content%></label><br>
-
-    <br>
-    <h3><%=@poll.questions[3].content%></h3>
-    <input type="checkbox" id="pa13" name="pa13" value="checked">
-    <label for="pa13"><%=@poll.questions[3].possible_answers[0].content%></label><br>
-
-    <input type="checkbox" id="pa14" name="pa14" value="checked">
-    <label for="pa14"><%=@poll.questions[3].possible_answers[1].content%></label><br>
-
-    <input type="checkbox" id="pa15" name="pa15" value="checked">
-    <label for="pa15"><%=@poll.questions[3].possible_answers[2].content%></label><br>
-
-    <input type="checkbox" id="pa16" name="pa16" value="checked">
-    <label for="pa16"><%=@poll.questions[3].possible_answers[3].content%></label><br>
-
-    <br>
-    <h3><%=@poll.questions[4].content%></h3>
-    <input type="checkbox" id="pa17" name="pa17" value="checked">
-    <label for="pa17"><%=@poll.questions[4].possible_answers[0].content%></label><br>
-
-    <input type="checkbox" id="pa18" name="pa18" value="checked">
-    <label for="pa18"><%=@poll.questions[4].possible_answers[1].content%></label><br>
-
-    <input type="checkbox" id="pa19" name="pa19" value="checked">
-    <label for="pa19"><%=@poll.questions[4].possible_answers[2].content%></label><br>
-
-    <input type="checkbox" id="pa20" name="pa20" value="checked">
-    <label for="pa20"><%=@poll.questions[4].possible_answers[3].content%></label><br>
+    
+    <% if @poll.questions[4].content != "" %>
+        <br>
+        <h3><%=@poll.questions[4].content%></h3>
+    <% end %>
+    <% if @poll.questions[4].possible_answers[0].content != "" %>
+        <input type="checkbox" id="pa17" name="pa17" value="checked">
+        <label for="pa17"><%=@poll.questions[4].possible_answers[0].content%></label><br>
+    <% end %>
+    <% if @poll.questions[4].possible_answers[1].content != "" %>
+        <input type="checkbox" id="pa18" name="pa18" value="checked">
+        <label for="pa18"><%=@poll.questions[4].possible_answers[1].content%></label><br>
+    <% end %>
+    <% if @poll.questions[4].possible_answers[2].content != "" %>
+        <input type="checkbox" id="pa19" name="pa19" value="checked">
+        <label for="pa19"><%=@poll.questions[4].possible_answers[2].content%></label><br>
+    <% end %>
+    <% if @poll.questions[4].possible_answers[3].content != "" %>
+        <input type="checkbox" id="pa20" name="pa20" value="checked">
+        <label for="pa20"><%=@poll.questions[4].possible_answers[3].content%></label><br>
+    <% end %>   
 
 <br>
 <input type="submit" value="Submit Your Answers.">
 </form>   
+

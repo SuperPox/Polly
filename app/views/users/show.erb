@@ -1,18 +1,17 @@
-
 <div class="container">
-<header><center><img src="images/polly-small.png" class="img-responsive main-image"></center></header>
-<div class="col-md-8 col-md-offset-2">
-  <center> <h2>Welcome <%=@user.username%></h2> </center>
+  <header><center><img src="images/polly-small.png" class="img-responsive main-image"></center></header>
+  <div class="col-md-8 col-md-offset-2">
+    <center> <h2>Welcome <%=@user.username%></h2> </center>
+    <center> <h3> <%=flash[:message]%> </h3> </center>
 
-  <div class="content">
-    <p>
-      <a href="/polls/new"><h3>Make a Polly</h3></a>
-      <br>
-      <h3> Take a Polly </h3>  
-      <br> 
-      <a href="/logout">Log Out</a>    
-    </p>
+    <div class="content">
+      <p>
+        <a href="/polls/new"><h3>Make a Polly</h3></a>
+        <br>
+        <h3> Take a Polly </h3>  
+        <br>  
+      </p>
+    </div>
   </div>
-</div>
 </div>
 

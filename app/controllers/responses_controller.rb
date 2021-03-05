@@ -8,6 +8,11 @@ class ResponsesController < ApplicationController
     post '/responses' do
         response = Response.create
         response.save
+
+        
+
+
+
         binding.pry
         redirect :"responses/#{response.id}"
     end

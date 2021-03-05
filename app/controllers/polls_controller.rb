@@ -1,17 +1,27 @@
 class PollsController < ApplicationController
 
     get '/polls/index' do
+        redirect_if_not_logged_in
         @poll = Poll.all
         erb :'polls/index'      
     end
 
+    get 'polls/my' do
+        binding.pry
+        redirect_if_not_logged_in
+        @poll = 
+        erb :'polls/my'
+    end
+
     get '/polls' do
+        redirect_if_not_logged_in
         @poll = Poll.all
         erb :'polls/index'
     end
 
-    post '/polls' do       
-        #=>params{"id"=>{"title"=>"Favorite Pet"}, "question"=>{"content"=>""}, "pa1"=>"", "pa2"=>"", etc.
+    post '/polls' do
+        redirect_if_not_logged_in       
+       
         poll = Poll.create(params[:id])
         poll.save
 
@@ -163,6 +173,7 @@ class PollsController < ApplicationController
     end
     
     get '/polls/:id' do
+        redirect_if_not_logged_in
         @poll = Poll.find_by(id: params[:id])
         if @poll == nil
             redirect :'/polls'
@@ -172,6 +183,7 @@ class PollsController < ApplicationController
 
     ########################################
     get '/polls/:id/edit' do
+        redirect_if_not_logged_in
         @poll = Poll.find_by(id: params[:id])
         if @poll == nil || @poll.user_id != session[:user_id]
             redirect :'/polls'
@@ -180,16 +192,74 @@ class PollsController < ApplicationController
     end
 
     patch '/polls/:id' do
+        redirect_if_not_logged_in
         @poll = Poll.find_by(id: params[:id])  
         if @poll.user_id == session[:user_id]
-            testHash = {"title" => "hardcoded: needs fix"}
-            @poll.update(testHash)
+            editedTitleHash = {title: params[:t1]}
+            @poll.update(editedTitleHash)
+
+            eQ1 = {content: params[:q1]}
+            @poll.questions[0].update(eQ1)
+            eQ2 = {content: params[:q2]}
+            @poll.questions[1].update(eQ2)
+            eQ3 = {content: params[:q3]}
+            @poll.questions[2].update(eQ3)
+            eQ4 = {content: params[:q4]}
+            @poll.questions[3].update(eQ4)
+            eQ5 = {content: params[:q5]}
+            @poll.questions[4].update(eQ5)
+
+            pA1 = {content: params[:pa1]}
+            @poll.questions[0].possible_answers[0].update(pA1)
+            pA2 = {content: params[:pa2]}
+            @poll.questions[0].possible_answers[1].update(pA2)
+            pA3 = {content: params[:pa3]}
+            @poll.questions[0].possible_answers[2].update(pA3)
+            pA4 = {content: params[:pa4]}
+            @poll.questions[0].possible_answers[3].update(pA4)
+
+            pA5 = {content: params[:pa5]}
+            @poll.questions[1].possible_answers[0].update(pA5)
+            pA6 = {content: params[:pa6]}
+            @poll.questions[1].possible_answers[1].update(pA6)
+            pA7 = {content: params[:pa7]}
+            @poll.questions[1].possible_answers[2].update(pA7)
+            pA8 = {content: params[:pa8]}
+            @poll.questions[1].possible_answers[3].update(pA8)
+
+            pA9 = {content: params[:pa9]}
+            @poll.questions[2].possible_answers[0].update(pA9)
+            pA10 = {content: params[:pa10]}
+            @poll.questions[2].possible_answers[1].update(pA10)
+            pA11 = {content: params[:pa11]}
+            @poll.questions[2].possible_answers[2].update(pA11)
+            pA12 = {content: params[:pa12]}
+            @poll.questions[2].possible_answers[3].update(pA12)
+
+            pA13 = {content: params[:pa13]}
+            @poll.questions[3].possible_answers[0].update(pA13)
+            pA14 = {content: params[:pa14]}
+            @poll.questions[3].possible_answers[1].update(pA14)
+            pA15 = {content: params[:pa15]}
+            @poll.questions[3].possible_answers[2].update(pA15)
+            pA16 = {content: params[:pa16]}
+            @poll.questions[3].possible_answers[3].update(pA16)
+
+            pA17 = {content: params[:pa17]}
+            @poll.questions[4].possible_answers[0].update(pA17)
+            pA18 = {content: params[:pa18]}
+            @poll.questions[4].possible_answers[1].update(pA18)
+            pA19 = {content: params[:pa19]}
+            @poll.questions[4].possible_answers[2].update(pA19)
+            pA20 = {content: params[:pa20]}
+            @poll.questions[4].possible_answers[3].update(pA20)
         end
         erb :'polls/show'
     end
     ##########################################
 
     delete '/polls/:id' do
+        redirect_if_not_logged_in
         @poll = Poll.find_by(id: params[:id])
         if @poll.user_id == session[:user_id]
             @poll.delete
@@ -201,7 +271,6 @@ class PollsController < ApplicationController
     end
 
     ##########################################
-
     get '/polls/:id/take' do
         @poll = Poll.find_by(id: params[:id])
         if @poll == nil
@@ -209,9 +278,4 @@ class PollsController < ApplicationController
         end
         erb :'polls/take'
     end
-
-
-
-
-
 end
