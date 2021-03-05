@@ -1,9 +1,7 @@
 <h2> <%=@poll.title%> </h2>
-
-
 <form action="/responses" method="post">
-    
-    
+    <input type="hidden" name="taker" value=<%=@poll.user%>
+
     <% if @poll.questions[0].content != "" %>
         <h3><%=@poll.questions[0].content%></h3>
     <% end %>
@@ -112,4 +110,5 @@
 <br>
 <input type="submit" value="Submit Your Answers.">
 </form>   
+
 

@@ -6,18 +6,15 @@ class ResponsesController < ApplicationController
     end
 
     post '/responses' do
+        user = User.find_by(id: session[:user_id])
         response = Response.create
-        response.save
-
-        
-
-
-
-        binding.pry
-        redirect :"responses/#{response.id}"
+        response.save   
+        erb :'responses/confirm'
+        #redirect :"responses/#{response.id}"
     end
 
     get '/responses/:id' do
+
         @response = Response.find_by(id: params[:id])
         if @response == nil
             redirect :'/responses'

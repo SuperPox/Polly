@@ -6,10 +6,10 @@ class PollsController < ApplicationController
         erb :'polls/index'      
     end
 
-    get 'polls/my' do
-        binding.pry
-        redirect_if_not_logged_in
-        @poll = 
+    get '/polls/my' do
+        user = User.find_by(id: session[:user_id])
+        @name = user[:username]
+        @mypolls = user.polls
         erb :'polls/my'
     end
 
@@ -276,6 +276,7 @@ class PollsController < ApplicationController
         if @poll == nil
             redirect :'/polls'
         end
+        @taker = @poll.user
         erb :'polls/take'
     end
 end

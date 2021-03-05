@@ -28,8 +28,10 @@
     <div class="topnav">
       <a class="active" href="/">Home</a>
       <% if current_user%>
-        <a href="/polls/new">Make a Polly</a>
-        <a href="/polls/take">Take a Polly</a>
+        <a href="/polls/new">Make</a>   
+        <a href="/polls/take">Take</a>
+        <a href="/polls/my">My Pollys</a>
+        <a href='/polls/index'>View All</a>
         <a href="/logout">Log Out</a>
       <%else %>
         <a href="/login"><right>Log In</right></a>
