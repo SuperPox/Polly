@@ -315,123 +315,124 @@ class PollsController < ApplicationController
         username = user.username
         u_string = " #{username}"
 
+
         if params[:pa1] != nil
             oldValue = poll.questions[0].possible_answers[0][:taker]
-            newValue = oldValue + u_string
+            newValue = "#{oldValue}" + "#{u_string}"
             newHash = {taker: newValue}
             poll.questions[0].possible_answers[0].update(newHash)
         end
         if params[:pa2] != nil
             oldValue = poll.questions[0].possible_answers[1][:taker]
-            newValue = oldValue + u_string
+            newValue = "#{oldValue}" + "#{u_string}"
             newHash = {taker: newValue}
             poll.questions[0].possible_answers[1].update(newHash)
         end
         if params[:pa3] != nil
             oldValue = poll.questions[0].possible_answers[2][:taker]
-            newValue = oldValue + u_string
+            newValue = "#{oldValue}" + "#{u_string}"
             newHash = {taker: newValue}
             poll.questions[0].possible_answers[2].update(newHash)
         end
         if params[:pa4] != nil
             oldValue = poll.questions[0].possible_answers[3][:taker]
-            newValue = oldValue + u_string
+            newValue = "#{oldValue}" + "#{u_string}"
             newHash = {taker: newValue}
             poll.questions[0].possible_answers[3].update(newHash)
         end
         if params[:pa5] != nil
             oldValue = poll.questions[1].possible_answers[0][:taker]
-            newValue = oldValue + u_string
+            newValue = "#{oldValue}" + "#{u_string}"
             newHash = {taker: newValue}
             poll.questions[1].possible_answers[0].update(newHash)
         end
         if params[:pa6] != nil
             oldValue = poll.questions[1].possible_answers[1][:taker]
-            newValue = oldValue + u_string
+            newValue = "#{oldValue}" + "#{u_string}"
             newHash = {taker: newValue}
             poll.questions[1].possible_answers[1].update(newHash)
         end
         if params[:pa7] != nil
             oldValue = poll.questions[1].possible_answers[2][:taker]
-            newValue = oldValue + u_string
+            newValue = "#{oldValue}" + "#{u_string}"
             newHash = {taker: newValue}
             poll.questions[1].possible_answers[2].update(newHash)
         end
         if params[:pa8] != nil
             oldValue = poll.questions[1].possible_answers[3][:taker]
-            newValue = oldValue + u_string
+            newValue = "#{oldValue}" + "#{u_string}"
             newHash = {taker: newValue}
             poll.questions[1].possible_answers[3].update(newHash)
         end
         if params[:pa9] != nil
             oldValue = poll.questions[2].possible_answers[0][:taker]
-            newValue = oldValue + u_string
+            newValue = "#{oldValue}" + "#{u_string}"
             newHash = {taker: newValue}
             poll.questions[2].possible_answers[0].update(newHash)
         end
         if params[:pa10] != nil
             oldValue = poll.questions[2].possible_answers[1][:taker]
-            newValue = oldValue + u_string
+            newValue = "#{oldValue}" + "#{u_string}"
             newHash = {taker: newValue}
             poll.questions[2].possible_answers[1].update(newHash)
         end
         if params[:pa11] != nil
             oldValue = poll.questions[2].possible_answers[2][:taker]
-            newValue = oldValue + u_string
+            newValue = "#{oldValue}" + "#{u_string}"
             newHash = {taker: newValue}
             poll.questions[2].possible_answers[2].update(newHash)
         end
         if params[:pa12] != nil
             oldValue = poll.questions[2].possible_answers[3][:taker]
-            newValue = oldValue + u_string
+            newValue = "#{oldValue}" + "#{u_string}"
             newHash = {taker: newValue}
             poll.questions[2].possible_answers[3].update(newHash)
         end
         if params[:pa13] != nil
             oldValue = poll.questions[3].possible_answers[0][:taker]
-            newValue = oldValue + u_string
+            newValue = "#{oldValue}" + "#{u_string}"
             newHash = {taker: newValue}
             poll.questions[3].possible_answers[0].update(newHash)
         end
         if params[:pa14] != nil
             oldValue = poll.questions[3].possible_answers[1][:taker]
-            newValue = oldValue + u_string
+            newValue = "#{oldValue}" + "#{u_string}"
             newHash = {taker: newValue}
             poll.questions[3].possible_answers[1].update(newHash)
         end
         if params[:pa15] != nil
             oldValue = poll.questions[3].possible_answers[2][:taker]
-            newValue = oldValue + u_string
+            newValue = "#{oldValue}" + "#{u_string}"
             newHash = {taker: newValue}
             poll.questions[3].possible_answers[2].update(newHash)
         end
         if params[:pa16] != nil
             oldValue = poll.questions[3].possible_answers[3][:taker]
-            newValue = oldValue + u_string
+            newValue = "#{oldValue}" + "#{u_string}"
             newHash = {taker: newValue}
             poll.questions[3].possible_answers[3].update(newHash)
         end
         if params[:pa17] != nil
             oldValue = poll.questions[4].possible_answers[0][:taker]
-            newValue = oldValue + u_string
+            newValue = "#{oldValue}" + "#{u_string}"
             newHash = {taker: newValue}
             poll.questions[4].possible_answers[0].update(newHash)
         end
         if params[:pa18] != nil
             oldValue = poll.questions[4].possible_answers[1][:taker]
-            newValue = oldValue + u_string
+            newValue = "#{oldValue}" + "#{u_string}"
             newHash = {taker: newValue}
             poll.questions[4].possible_answers[1].update(newHash)
         end
         if params[:pa19] != nil
             oldValue = poll.questions[4].possible_answers[2][:taker]
-            newValue = oldValue + u_string
+            newValue = "#{oldValue}" + "#{u_string}"
             newHash = {taker: newValue}
             poll.questions[4].possible_answers[2].update(newHash)
         end
         if params[:pa20] != nil
             oldValue = poll.questions[4].possible_answers[3][:taker]
-            newValue = oldValue + u_string
+            newValue = "#{oldValue}" + "#{u_string}"
             newHash = {taker: newValue}
             poll.questions[4].possible_answers[3].update(newHash)
         end
