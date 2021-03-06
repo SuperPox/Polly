@@ -52,7 +52,9 @@
 
     <a href='/polls/<%=@poll.id%>/edit'>Edit This Polly</a><br>
     <br>
-    
+    <a href='/responses/<%=@poll.id%>/show'>See Responses for This Polly</a><br>
+    <br>
+
     <form action="/polls/<%=@poll.id%>" method="post">
     <input type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete This Polly">

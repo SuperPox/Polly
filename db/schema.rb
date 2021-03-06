@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_04_073748) do
+ActiveRecord::Schema.define(version: 2021_03_05_212051) do
 
   create_table "polls", force: :cascade do |t|
     t.integer "user_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_03_04_073748) do
   create_table "possible_answers", force: :cascade do |t|
     t.integer "question_id"
     t.string "content"
+    t.string "taker"
   end
 
   create_table "questions", force: :cascade do |t|

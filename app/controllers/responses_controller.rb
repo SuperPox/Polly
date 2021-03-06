@@ -13,12 +13,13 @@ class ResponsesController < ApplicationController
         #redirect :"responses/#{response.id}"
     end
 
-    get '/responses/:id' do
-
-        @response = Response.find_by(id: params[:id])
-        if @response == nil
-            redirect :'/responses'
+    get '/responses/:id/show' do
+        redirect_if_not_logged_in
+        @poll = Poll.find_by(id: params[:id])
+        if @poll == nil
+            redirect :'/polls'
         end
+        @responses = @poll.questions[0].possible_answers[0][:taker] 
         erb :'responses/show'
     end
 

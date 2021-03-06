@@ -1,1 +1,121 @@
-<h1>Responses Show </h1>
+<h1> Responses to Your Polly </h1>
+
+<h2> <%=@poll.title%> </h2>
+
+<h3><%=@poll.questions[0].content%></h3>
+<ol type="A">
+    <li><%=@poll.questions[0].possible_answers[0].content%></li>
+        <% if @poll.questions[0].possible_answers[0][:taker] != nil %>
+            <li><em> <%=@poll.questions[0].possible_answers[0][:taker]%> </em></li><br>
+        <%end%>
+    <li><%=@poll.questions[0].possible_answers[1].content%></li>
+        <% if @poll.questions[0].possible_answers[1][:taker] != nil %>
+            <li><em> <%=@poll.questions[0].possible_answers[1][:taker]%> </em></li><br>
+        <%end%>
+    <li><%=@poll.questions[0].possible_answers[2].content%></li>
+        <% if @poll.questions[0].possible_answers[2][:taker] != nil %>
+            <li><em> <%=@poll.questions[0].possible_answers[2][:taker]%> </em></li><br>
+        <%end%>
+    <li><%=@poll.questions[0].possible_answers[3].content%></li>
+        <% if @poll.questions[0].possible_answers[3][:taker] != nil %>
+            <li><em> <%=@poll.questions[0].possible_answers[3][:taker]%> </em></li><br>
+        <%end%>
+</ol>
+
+<br>
+<h3><%=@poll.questions[1].content%></h3>
+<ol type="A">
+    <li><%=@poll.questions[1].possible_answers[0].content%></li>
+        <% if @poll.questions[1].possible_answers[0][:taker] != nil %>
+            <li><em> <%=@poll.questions[1].possible_answers[0][:taker]%> </em></li><br>
+        <%end%>
+    <li><%=@poll.questions[1].possible_answers[1].content%></li>
+        <% if @poll.questions[1].possible_answers[1][:taker] != nil %>
+            <li><em> <%=@poll.questions[1].possible_answers[1][:taker]%> </em></li><br>
+        <%end%>
+    <li><%=@poll.questions[1].possible_answers[2].content%></li>
+        <% if @poll.questions[1].possible_answers[2][:taker] != nil %>
+            <li><em> <%=@poll.questions[1].possible_answers[2][:taker]%> </em></li><br>
+        <%end%>
+    <li><%=@poll.questions[1].possible_answers[3].content%></li>
+        <% if @poll.questions[1].possible_answers[3][:taker] != nil %>
+            <li><em> <%=@poll.questions[1].possible_answers[3][:taker]%> </em></li><br>
+        <%end%>
+</ol>
+
+<br>
+<h3><%=@poll.questions[2].content%></h3>
+<ol type="A">
+    <li><%=@poll.questions[2].possible_answers[0].content%></li>
+        <% if @poll.questions[2].possible_answers[0][:taker] != nil %>
+            <li><em> <%=@poll.questions[2].possible_answers[0][:taker]%> </em></li><br>
+        <%end%>
+    <li><%=@poll.questions[2].possible_answers[1].content%></li>
+        <% if @poll.questions[2].possible_answers[1][:taker] != nil %>
+            <li><em> <%=@poll.questions[2].possible_answers[1][:taker]%> </em></li><br>
+        <%end%>
+    <li><%=@poll.questions[2].possible_answers[2].content%></li>
+        <% if @poll.questions[2].possible_answers[2][:taker] != nil %>
+            <li><em> <%=@poll.questions[2].possible_answers[2][:taker]%> </em></li><br>
+        <%end%>
+    <li><%=@poll.questions[2].possible_answers[3].content%></li>
+        <% if @poll.questions[2].possible_answers[3][:taker] != nil %>
+            <li><em> <%=@poll.questions[2].possible_answers[3][:taker]%> </em></li><br>
+        <%end%>
+</ol>
+
+<br>
+<h3><%=@poll.questions[3].content%></h3>
+<ol type="A">
+    <li><%=@poll.questions[3].possible_answers[0].content%></li>
+        <% if @poll.questions[3].possible_answers[0][:taker] != nil %>
+            <li><em> <%=@poll.questions[3].possible_answers[0][:taker]%> </em></li><br>
+        <%end%>
+    <li><%=@poll.questions[3].possible_answers[1].content%></li>
+        <% if @poll.questions[3].possible_answers[1][:taker] != nil %>
+            <li><em> <%=@poll.questions[3].possible_answers[1][:taker]%> </em></li><br>
+        <%end%>
+    <li><%=@poll.questions[3].possible_answers[2].content%></li>
+        <% if @poll.questions[3].possible_answers[2][:taker] != nil %>
+            <li><em> <%=@poll.questions[3].possible_answers[2][:taker]%> </em></li><br>
+        <%end%>
+    <li><%=@poll.questions[3].possible_answers[3].content%></li>
+        <% if @poll.questions[3].possible_answers[3][:taker] != nil %>
+            <li><em> <%=@poll.questions[3].possible_answers[3][:taker]%> </em></li><br>
+        <%end%>
+</ol>
+
+<br>
+<h3><%=@poll.questions[4].content%></h3>
+<ol type="A">
+    <li><%=@poll.questions[4].possible_answers[0].content%></li>
+        <% if @poll.questions[4].possible_answers[0][:taker] != nil %>
+            <li><em> <%=@poll.questions[4].possible_answers[0][:taker]%> </em></li><br>
+        <%end%>
+    <li><%=@poll.questions[4].possible_answers[1].content%></li>
+        <% if @poll.questions[4].possible_answers[1][:taker] != nil %>
+            <li><em> <%=@poll.questions[4].possible_answers[1][:taker]%> </em></li><br>
+        <%end%>
+    <li><%=@poll.questions[4].possible_answers[2].content%></li>
+        <% if @poll.questions[4].possible_answers[2][:taker] != nil %>
+            <li><em> <%=@poll.questions[4].possible_answers[2][:taker]%> </em></li><br>
+        <%end%>
+    <li><%=@poll.questions[4].possible_answers[3].content%></li>
+        <% if @poll.questions[4].possible_answers[3][:taker] != nil %>
+            <li><em> <%=@poll.questions[4].possible_answers[3][:taker]%> </em></li><br>
+        <%end%>
+</ol>
+
+<a href='/polls/<%=@poll.id%>/take'>Take This Polly</a><br>
+<br>
+<% if check_owner(@poll) %>
+
+    <a href='/polls/<%=@poll.id%>/edit'>Edit This Polly</a><br>
+    <br>
+
+    <form action="/polls/<%=@poll.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete This Polly">
+    </form>
+
+<%end%>
